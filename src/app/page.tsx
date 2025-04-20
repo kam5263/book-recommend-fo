@@ -40,7 +40,7 @@ export default function MainPage() {
         📚 내 취향 맞춤<br />AI 책 추천 서비스
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-3xl">
-      {pages.map(({ title, description, href, emoji, disabled }, idx) => {
+      {pages.map(({ title, description, href, emoji, disabled }) => {
         const cardClasses = `group transition-all duration-200 p-6 cursor-pointer rounded-2xl flex flex-col gap-3 items-start ${
           disabled
             ? "bg-gray-100 border-gray-200 text-gray-400 cursor-not-allowed"
