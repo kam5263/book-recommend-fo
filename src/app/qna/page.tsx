@@ -50,10 +50,13 @@ export default function BookPreferenceQuiz() {
             answer: answer
           };
         });
-        
-        const response = await fetch("http://127.0.0.1:8000/recommend", {
+
+        const response = await fetch("https://book-recommend-production.up.railway.app/recommend", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: { 
+            "Content-Type": "application/json" ,
+            "Authorization": "Bearer " + process.env.NEXT_PUBLIC_API_KEY
+          },
           body: JSON.stringify({ user_id: "user-" + Date.now(), answers: structuredAnswers })
         });
         const data = await response.json();
