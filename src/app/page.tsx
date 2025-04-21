@@ -12,17 +12,16 @@ const pages = [
     disabled: true
   },
   {
-    title: "10문10답 5가지 책 추천",
-    description: "간단한 설문으로 5권의 책을 추천받으세요.",
+    title: "10문10답 6가지 책 추천",
+    description: "간단한 설문으로 6권의 책을 추천받으세요.",
     href: "/qna",
     emoji: "📋"
   },
   {
     title: "인기 순위",
-    description: "지금 가장 인기있는 책들을 한눈에!",
+    description: "알라딘에서 인기있는 책들을 한눈에!",
     href: "/popular",
-    emoji: "🔥",
-    disabled: true
+    emoji: "🔥"
   },
   {
     title: "비싸고 두꺼운 책",

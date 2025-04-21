@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import type { QnaItem } from "@/lib/api/fetchQnaList";
 import { fetchQnaList } from "@/lib/api/fetchQnaList";
+import { fetcher } from "@/lib/api/api";
 
 export default function BookPreferenceQuiz() {
   const [step, setStep] = useState(0);
@@ -51,7 +52,7 @@ export default function BookPreferenceQuiz() {
           };
         });
 
-        const response = await fetch("https://book-recommend-production.up.railway.app/recommend", {
+        const response = await fetcher("/recommend", {
           method: "POST",
           headers: { 
             "Content-Type": "application/json" ,
@@ -169,12 +170,21 @@ export default function BookPreferenceQuiz() {
             </div>
 
             <div className="mt-6 grid grid-cols-2 gap-4">
-              <Button onClick={handlePrev} disabled={step === 0 || submitted} variant="outline" className="w-full">
+            <Button
+                onClick={handlePrev}
+                disabled={step === 0 || submitted}
+                variant="outline"
+                className="w-full cursor-pointer"
+              >
                 이전
               </Button>
-              <Button onClick={handleNext} disabled={!isAnswered() || submitted} className="w-full">
-                {step < qnaList.length - 1 ? "다음" : "완료"}
-              </Button>
+              <Button
+              onClick={handleNext}
+              disabled={!isAnswered() || submitted}
+              className="w-full cursor-pointer"
+            >
+              {step < qnaList.length - 1 ? "다음" : "완료"}
+            </Button>
             </div>
           </CardContent>
         </Card>
