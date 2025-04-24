@@ -27,17 +27,21 @@ const pages = [
     title: "비싸고 두꺼운 책",
     description: "가치있는, 소장욕구 뿜뿜! 프리미엄 도서 모음.",
     href: "/expensive",
-    emoji: "💎",
-    disabled: true
+    emoji: "💎"
   }
 ];
 
 export default function MainPage() {
   return (
     <div className="min-h-screen bg-gradient-to-tr from-sky-50 to-white flex flex-col items-center justify-center p-4">
-      <h1 className="text-3xl md:text-4xl font-extrabold mb-10 text-sky-800 text-center">
-        📚 내 취향 맞춤<br />AI 책 추천 서비스
-      </h1>
+<h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold mb-6 text-center text-neutral-800 leading-snug">
+  <span role="img" aria-label="books">📚</span> 민음북클럽 677권 중<br /> 
+  <span className="block text-[color:var(--tw-prose-invert)]">
+    <span className="text-[color:#FF6363]">내 취향에 딱 맞는</span> AI 책 추천
+  </span>
+</h1>
+
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-3xl">
       {pages.map(({ title, description, href, emoji, disabled }) => {
         const cardClasses = `group transition-all duration-200 p-6 cursor-pointer rounded-2xl flex flex-col gap-3 items-start ${

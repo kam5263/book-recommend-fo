@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import type { QnaItem } from "@/lib/api/fetchQnaList";
 import { fetchQnaList } from "@/lib/api/fetchQnaList";
 import { fetcher } from "@/lib/api/api";
+import FloatingHomeButton from "@/components/FloatingHomeButton";
 
 export default function BookPreferenceQuiz() {
   const [step, setStep] = useState(0);
@@ -189,6 +190,7 @@ export default function BookPreferenceQuiz() {
           </CardContent>
         </Card>
       </motion.div>
+      <FloatingHomeButton />
     </div>
   );
 }
